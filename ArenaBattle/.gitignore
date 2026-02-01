@@ -73,9 +73,3 @@ Plugins/**/Intermediate/*
 
 # Cache files for the editor to use
 DerivedDataCache/*
-
-# Unreal Engine build outputs
-Package/
-*.pak
-*.ucas
-*.utoc
