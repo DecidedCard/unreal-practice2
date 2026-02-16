@@ -34,7 +34,7 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Character)
 	float GroundSpeed;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Character)
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Character) // UPROPERTY로 선언한 불리언이기 때문에 uint8로 선언하고, :1로 비트필드로 선언해야 함
 	uint8 bIsIdle : 1;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Character)
