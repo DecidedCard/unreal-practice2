@@ -9,6 +9,8 @@
 #include "ABComboActionData.h"
 #include "Physics/ABColision.h"
 #include "Engine/DamageEvents.h"
+#include "CharacterStat/ABCharacterStatComponent.h"
+#include "Components/WidgetComponent.h"
 
 // Sets default values
 AABCharacterBase::AABCharacterBase()
@@ -78,6 +80,11 @@ AABCharacterBase::AABCharacterBase()
 		DeadMontage = DeadMontageRef.Object;
 	}
 
+	// Stat Component
+	Stat = CreateDefaultSubobject<UABCharacterStatComponent>(TEXT("Stat"));
+
+	// Widget Component
+	HpBar = CreateDefaultSubobject<UWidgetComponent>(TEXT("Widget"));
 
 }
 
