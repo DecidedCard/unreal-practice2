@@ -5,7 +5,7 @@
 #include "Components/BoxComponent.h"
 #include "Components/StaticMeshComponent.h"
 #include "Particles/ParticleSystemComponent.h"
-#include "Physics/ABColision.h"
+#include "Physics/ABCollision.h"
 #include "Interface/ABCharacterItemInterface.h"
 #include "Engine/AssetManager.h"
 #include "Item/ABItemData.h"

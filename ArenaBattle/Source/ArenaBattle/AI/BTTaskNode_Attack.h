@@ -4,19 +4,20 @@
 
 #include "CoreMinimal.h"
 #include "BehaviorTree/BTTaskNode.h"
-#include "BTTask_FindPatrolPos.generated.h"
+#include "BTTaskNode_Attack.generated.h"
 
 /**
  * 
  */
 UCLASS()
-class ARENABATTLE_API UBTTask_FindPatrolPos : public UBTTaskNode
+class ARENABATTLE_API UBTTaskNode_Attack : public UBTTaskNode
 {
 	GENERATED_BODY()
 
 public:
-	UBTTask_FindPatrolPos();
+	UBTTaskNode_Attack();
 
+protected:
 	virtual EBTNodeResult::Type ExecuteTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory) override;
 	
 };

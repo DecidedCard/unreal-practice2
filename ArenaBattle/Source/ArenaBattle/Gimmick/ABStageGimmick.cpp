@@ -4,7 +4,7 @@
 #include "Gimmick/ABStageGimmick.h"
 #include "Components/StaticMeshComponent.h"
 #include "Components/BoxComponent.h"
-#include "Physics/ABColision.h"
+#include "Physics/ABCollision.h"
 #include "Character/ABCharacterNonPlayer.h"
 #include "Item/ABItemBox.h"
 #include "Engine/OverlapResult.h"
