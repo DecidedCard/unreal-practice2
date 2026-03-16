@@ -6,12 +6,6 @@
 AABGameMode::AABGameMode()
 {
 	// DefaultPawnClass
-	//static ConstructorHelpers::FClassFinder<APawn> ThirdPersonClassRef(TEXT("/Game/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.BP_ThirdPersonCharacter_C"));
-	//if (ThirdPersonClassRef.Class)
-	//{
-	//	DefaultPawnClass = ThirdPersonClassRef.Class;
-	//}
-
 	static ConstructorHelpers::FClassFinder<APawn> DefaultPawnClassRef(TEXT("/Script/Engine.Blueprint'/Game/ArenaBattle/Blueprint/BP_ABCharacterPlayer.BP_ABCharacterPlayer_C'"));
 	if (DefaultPawnClassRef.Class)
 	{
@@ -25,5 +19,28 @@ AABGameMode::AABGameMode()
 	{
 		PlayerControllerClass = PlayerControllerClassRef.Class;
 	}
+
+	ClearScore = 3;
+	CurrentScore = 0;
+	bIsCleared = false;
 	
+}
+
+void AABGameMode::OnPlayerScoreChanged(int32 NewPlayerScore)
+{
+	CurrentScore = NewPlayerScore;
+
+	if (CurrentScore >= ClearScore)
+	{
+		bIsCleared = true;
+	}
+}
+
+void AABGameMode::OnPlayerDead()
+{
+}
+
+bool AABGameMode::IsGameCleared()
+{
+	return bIsCleared;
 }
