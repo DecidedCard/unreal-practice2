@@ -6,6 +6,8 @@
 #include "GameFramework/PlayerController.h"
 #include "ABPlayerController.generated.h"
 
+DECLARE_LOG_CATEGORY_EXTERN(LogABPlayerController, Log, All);
+
 /**
  * 
  */
@@ -23,6 +25,8 @@ public:
 	void K2_OnGameOver();
 	UFUNCTION(BlueprintImplementableEvent, Category = Game, Meta = (DisplayName = "OnGameClearCpp"))
 	void K2_OnGameClear();
+	UFUNCTION(BlueprintImplementableEvent, Category = Game, Meta = (DisplayName = "OnGameRetryCountCpp"))
+	void K2_OnGameRetryCount(int32 NewRetryCount);
 
 	void GameScoreChanged(int32 NewScore);
 	void GameOver();
@@ -38,4 +42,9 @@ protected:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = HUD)
 	TObjectPtr<class UABHUDWidget> ABHUDWidget;
+
+// Save Game Section
+protected:
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = SaveGame)
+	TObjectPtr<class UABSaveGame> SaveGameInstance;
 };
